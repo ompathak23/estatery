@@ -18,8 +18,8 @@ const CustomInput = styled(InputBase)(({ theme }) => ({
         borderRadius: 8,
         backgroundColor: theme.palette.background.paper,
         border: "0px",
-        fontSize: 18,
-        padding: "13px 26px 10px 12px",
+        fontSize: 15,
+        padding: "8px 26px 10px 12px",
         transition: theme.transitions.create(["border-color", "box-shadow"]),
         fontFamily: 'Montserrat',
         fontStyle: 'normal',
@@ -49,8 +49,8 @@ const FilterPanel = ({
 }) => {
     return (
         <div>
-            <Container sx={{ backgroundColor: 'white', borderRadius: '10px', display: 'flex', direction: { sm: 'column', md: 'row' }, justifyContent: { xs: 'center', md: 'center' }, alignItems: 'center', width: '73%', flexWrap: 'wrap', gap: '12px' }}>
-                <Box sx={{ p: 2 }}>
+            <Container sx={{ backgroundColor: 'white', borderRadius: '10px', display: 'flex', direction: { sm: 'column', md: 'row' }, justifyContent: { xs: 'center', md: 'center' }, alignItems: 'center', width: '75%', flexWrap: 'wrap', gap: '10px' }}>
+                <Box sx={{ p: 1 }}>
                     <Typography variant="subtitle1" sx={{
                         fontFamily: 'Montserrat',
                         fontStyle: 'normal',
@@ -63,21 +63,16 @@ const FilterPanel = ({
                     <Select
                         value={selectedLocation}
                         onChange={selectLocation}
-                        // style={{
-                        //     width: '150px',
-                        //     height: '50px',
-                        //     borderRadius: '12px',
-                        // }}
                         sx={{
-                            width: '175px',
+                            width: '130px',
                         }}
                         input={<CustomInput />}
                     >
-                        <MenuItem value="None" sx={{ fontFamily: 'Montserrat', fontWeight: '500' }}>None</MenuItem>
-                        <MenuItem value='United States' sx={{ fontFamily: 'Montserrat', fontWeight: '500' }}>United States</MenuItem>
-                        <MenuItem value='New York' sx={{ fontFamily: 'Montserrat', fontWeight: '500' }}>New York</MenuItem>
-                        <MenuItem value='Russia' sx={{ fontFamily: 'Montserrat', fontWeight: '500' }}>Russia</MenuItem>
-                        <MenuItem value='Canada' sx={{ fontFamily: 'Montserrat', fontWeight: '500' }}>Canada</MenuItem>
+                        <MenuItem value="None" sx={{ fontFamily: 'Montserrat', fontWeight: '500', fontSize: '15px' }}>None</MenuItem>
+                        <MenuItem value='United States' sx={{ fontFamily: 'Montserrat', fontWeight: '500', fontSize: '15px' }}>United States</MenuItem>
+                        <MenuItem value='New York' sx={{ fontFamily: 'Montserrat', fontWeight: '500', fontSize: '15px' }}>New York</MenuItem>
+                        <MenuItem value='Russia' sx={{ fontFamily: 'Montserrat', fontWeight: '500', fontSize: '15px' }}>Russia</MenuItem>
+                        <MenuItem value='Canada' sx={{ fontFamily: 'Montserrat', fontWeight: '500', fontSize: '15px' }}>Canada</MenuItem>
                     </Select>
                 </Box>
                 {/* <Divider orientation="vertical" flexItem sx={{ display: { xs: 'none', lg: 'flex' } }} /> */}
@@ -88,7 +83,7 @@ const FilterPanel = ({
                         fontWeight: '600',
                         fontSize: '15px',
                         paddingLeft: '12px',
-                        paddingTop: '10px',
+                        paddingTop: '15px',
                         color: 'grey',
                     }}>When</Typography>
                     <DateField
@@ -96,7 +91,7 @@ const FilterPanel = ({
                         type="date"
                         value={selectedDate}
                         onChange={selectDate}
-                        InputProps={{ style: { fontFamily: 'Montserrat', fontWeight: '600', fontSize: '18px', marginTop: '-5px' } }}
+                        InputProps={{ style: { fontFamily: 'Montserrat', fontWeight: '600', fontSize: '15px', marginTop: '-7px' } }}
                     />
                 </Box>
                 {/* <Divider orientation="vertical" flexItem sx={{ display: { xs: 'none', lg: 'flex' } }} /> */}
@@ -143,15 +138,15 @@ const FilterPanel = ({
                         displayEmpty
                         inputProps={{ "aria-label": "Without label" }}
                         sx={{
-                            width: '175px',
+                            width: '130px',
                         }}
                         input={<CustomInput />}
                     >
-                        <MenuItem value={0} sx={{ fontFamily: 'Montserrat', fontWeight: '500' }}>None</MenuItem>
-                        <MenuItem value={1} sx={{ fontFamily: 'Montserrat', fontWeight: '500' }}>{'$0 - $100,000'}</MenuItem>
-                        <MenuItem value={2} sx={{ fontFamily: 'Montserrat', fontWeight: '500' }}>{'$100,000 - $150,000'}</MenuItem>
-                        <MenuItem value={3} sx={{ fontFamily: 'Montserrat', fontWeight: '500' }}>{'$150,000 - $200,000'}</MenuItem>
-                        <MenuItem value={4} sx={{ fontFamily: 'Montserrat', fontWeight: '500' }}>{'$200,000 - $300,000'}</MenuItem>
+                        <MenuItem value={0} sx={{ fontFamily: 'Montserrat', fontWeight: '500', fontSize: '15px' }}>None</MenuItem>
+                        <MenuItem value={1} sx={{ fontFamily: 'Montserrat', fontWeight: '500', fontSize: '15px' }}>{'$0 - $100,000'}</MenuItem>
+                        <MenuItem value={2} sx={{ fontFamily: 'Montserrat', fontWeight: '500', fontSize: '15px' }}>{'$100,000 - $150,000'}</MenuItem>
+                        <MenuItem value={3} sx={{ fontFamily: 'Montserrat', fontWeight: '500', fontSize: '15px' }}>{'$150,000 - $200,000'}</MenuItem>
+                        <MenuItem value={4} sx={{ fontFamily: 'Montserrat', fontWeight: '500', fontSize: '15px' }}>{'$200,000 - $300,000'}</MenuItem>
                     </Select>
                 </Box>
                 {/* <Divider orientation="vertical" flexItem sx={{ display: { xs: 'none', lg: 'flex' } }} /> */}
@@ -171,21 +166,21 @@ const FilterPanel = ({
                         displayEmpty
                         inputProps={{ "aria-label": "Without label" }}
                         sx={{
-                            width: '175px',
+                            width: '130px',
                         }}
                         input={<CustomInput />}
                     >
-                        <MenuItem value="None" sx={{ fontFamily: 'Montserrat', fontWeight: '500' }}>None</MenuItem>
-                        <MenuItem value='House' sx={{ fontFamily: 'Montserrat', fontWeight: '500' }}>House</MenuItem>
-                        <MenuItem value='Villa' sx={{ fontFamily: 'Montserrat', fontWeight: '500' }}>Villa</MenuItem>
-                        <MenuItem value='Apartment' sx={{ fontFamily: 'Montserrat', fontWeight: '500' }}>Apartment</MenuItem>
+                        <MenuItem value="None" sx={{ fontFamily: 'Montserrat', fontWeight: '500', fontSize: '15px' }}>None</MenuItem>
+                        <MenuItem value='House' sx={{ fontFamily: 'Montserrat', fontWeight: '500', fontSize: '15px' }}>House</MenuItem>
+                        <MenuItem value='Villa' sx={{ fontFamily: 'Montserrat', fontWeight: '500', fontSize: '15px' }}>Villa</MenuItem>
+                        <MenuItem value='Apartment' sx={{ fontFamily: 'Montserrat', fontWeight: '500', fontSize: '15px' }}>Apartment</MenuItem>
                     </Select>
                 </Box>
                 {/* <Divider orientation="vertical" flexItem sx={{ display: { xs: 'none', lg: 'flex' } }} /> */}
                 <Box>
                     <Button variant="contained" onClick={submitForm} sx={{
-                        width: '125px',
-                        height: '70px',
+                        width: '120px',
+                        height: '60px',
                         boxShadow: 'none',
                         textTransform: 'none',
                         backgroundColor: '#7066ec',

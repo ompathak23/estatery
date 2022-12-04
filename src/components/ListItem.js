@@ -12,17 +12,17 @@ import { Divider } from '@mui/material';
 
 const ListItem = ({ item }) => {
     return (
-        <Card sx={{ width: 350, borderRadius: '10px', margin: '15px' }}>
+        <Card sx={{ width: 285, borderRadius: '10px', margin: '12px' }}>
             <CardMedia
                 component="img"
                 alt={item.name}
-                height="175"
+                height="150"
                 image={item.image}
             />
             <CardContent>
                 <Box sx={{ display: 'flex', direction: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
                     <Box sx={{ display: "flex", direction: 'row', alignItems: 'center' }}>
-                        <Typography gutterBottom variant="h6" component="div" sx={{
+                        <Typography gutterBottom variant="subtitle1" component="div" sx={{
                             fontFamily: 'Montserrat',
                             fontWeight: '700',
                             fontStyle: 'normal',
@@ -30,7 +30,7 @@ const ListItem = ({ item }) => {
                         }}>
                             ${item.price}
                         </Typography>
-                        <Typography variant="subtitle1" sx={{
+                        <Typography variant="subtitle2" sx={{
                             marginTop: '-5px',
                             fontFamily: 'Montserrat',
                             fontWeight: '500',
@@ -40,23 +40,24 @@ const ListItem = ({ item }) => {
                             paddingLeft: '3px'
                         }}>/month</Typography>
                     </Box>
-                    <FavoriteBorderIcon fontSize='small' sx={{ marginTop: '-10px' }} />
+                    <FavoriteBorderIcon fontSize='small' sx={{ marginTop: '-8px' }} />
                 </Box>
-                <Typography variant="h5" sx={{
+                <Typography variant="h6" sx={{
                     fontFamily: 'Montserrat',
                     fontWeight: '700',
                     fontStyle: 'normal',
+                    fontSize: '18px',
                     color: '#221e41',
                     letterSpacing: '-0.04rem'
                 }}>
                     {item.name}
                 </Typography>
 
-                <Typography variant="subtitle1" sx={{
+                <Typography variant="subtitle2" sx={{
                     fontFamily: 'Montserrat',
                     fontWeight: '400',
                     fontStyle: 'normal',
-                    fontSize: '12px',
+                    fontSize: '11px',
                     color: 'grey',
                     marginBottom: '10px'
                 }}>
@@ -70,7 +71,7 @@ const ListItem = ({ item }) => {
                             fontFamily: 'Montserrat',
                             fontWeight: '400',
                             fontStyle: 'normal',
-                            fontSize: '12px',
+                            fontSize: '10px',
                             color: 'grey',
                             marginTop: '-3px',
                             marginLeft: '3px'
@@ -82,7 +83,7 @@ const ListItem = ({ item }) => {
                             fontFamily: 'Montserrat',
                             fontWeight: '400',
                             fontStyle: 'normal',
-                            fontSize: '12px',
+                            fontSize: '10px',
                             color: 'grey',
                             marginTop: '-3px',
                             marginLeft: '3px'
@@ -94,7 +95,7 @@ const ListItem = ({ item }) => {
                             fontFamily: 'Montserrat',
                             fontWeight: '400',
                             fontStyle: 'normal',
-                            fontSize: '12px',
+                            fontSize: '10px',
                             color: 'grey',
                             marginTop: '-3px',
                             marginLeft: '3px'

@@ -14,11 +14,11 @@ const pages = ['Rent', 'Buy', 'Sell', 'Manage Property', 'Resources'];
 
 const Header = () => {
     return (
-        <AppBar position="static" sx={{ boxShadow: 'none', backgroundColor: '#fbfaff', padding: '6px' }}>
+        <AppBar position="static" sx={{ boxShadow: 'none', backgroundColor: '#fbfaff', padding: '2px' }}>
             <Container maxWidth="xl">
                 <Toolbar disableGutters sx={{ display: 'flex' }}>
                     <div style={{ display: "flex", direction: 'row', alignItems: 'center' }}>
-                        <CottageRoundedIcon sx={{ display: { md: 'flex' }, color: '#7066ec', mr: 0.8 }} fontSize='medium' />
+                        <CottageRoundedIcon sx={{ display: { md: 'flex' }, color: '#7066ec', mr: 0.8 }} fontSize='small' />
                         <Typography
                             variant="h6"
                             noWrap
@@ -31,6 +31,7 @@ const Header = () => {
                                 fontFamily: 'Montserrat',
                                 fontStyle: 'normal',
                                 fontWeight: 700,
+                                fontSize: '16px',
                                 color: '#221e41',
                                 letterSpacing: '-0.01rem',
                                 textDecoration: 'none',
@@ -41,20 +42,20 @@ const Header = () => {
                     </div>
 
 
-                    <Box sx={{ flexGrow: 1, display: { sm: 'none', md: 'flex', }, ml: 3 }}>
+                    <Box sx={{ flexGrow: 1, display: { xs: 'none', sm: 'none', md: 'flex', }, ml: 2 }}>
                         {pages.map((page) => (
                             <Button
                                 key={page}
                                 sx={{
-                                    mx: 1.25,
-                                    mt: 0.4,
+                                    mx: 1,
+                                    mt: 0.3,
                                     color: '#221e41',
                                     display: 'block',
                                     textTransform: 'none',
                                     fontFamily: 'Montserrat',
                                     letterSpacing: '-0.01rem',
                                     fontWeight: 600,
-                                    fontSize: '14px',
+                                    fontSize: '12px',
 
                                     '&:hover': {
                                         backgroundColor: '#e9e7f8',
@@ -81,7 +82,7 @@ const Header = () => {
 
                                 fontFamily: 'Montserrat',
                                 fontStyle: 'normal',
-                                fontSize: 14,
+                                fontSize: 12,
                                 fontWeight: 600,
                                 letterSpacing: '-0.01rem',
                                 color: '#7066ec',
@@ -107,7 +108,7 @@ const Header = () => {
 
                                 fontFamily: 'Montserrat',
                                 fontStyle: 'normal',
-                                fontSize: 14,
+                                fontSize: 12,
                                 fontWeight: 600,
                                 letterSpacing: '-0.01rem',
                                 color: '#fbfaff',

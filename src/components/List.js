@@ -10,9 +10,9 @@ const List = ({ list }) => {
             display: 'flex',
             direction: 'row',
             justifyContent: 'center',
-            width: '80%',
+            width: '85%',
             flexWrap: 'wrap',
-            marginTop: '40px'
+            marginTop: '30px'
         }}>
 
             {
