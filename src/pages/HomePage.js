@@ -93,7 +93,7 @@ const HomePage = () => {
 
     useEffect(() => {
         applyFilters();
-    }, [searchInput])
+    }, [searchInput]) // eslint-disable-line react-hooks/exhaustive-deps
 
     const handleSubmit = (e) => {
         e.preventDefault()
