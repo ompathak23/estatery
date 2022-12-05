@@ -4,6 +4,8 @@ import { Container } from '@mui/system';
 import { Typography } from '@mui/material';
 import { Box } from '@mui/material';
 
+// This returns a component when there are no results to display
+
 const EmptyView = () => {
     return (
         <Container sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '75%', height: '450px' }}>

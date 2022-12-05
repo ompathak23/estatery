@@ -10,13 +10,16 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import Stack from '@mui/material/Stack';
 
-const pages = ['Rent', 'Buy', 'Sell', 'Manage Property', 'Resources'];
+const pages = ['Rent', 'Buy', 'Sell', 'Manage Property', 'Resources']; // Pages 
 
 const Header = () => {
     return (
         <AppBar position="static" sx={{ boxShadow: 'none', backgroundColor: '#fbfaff', padding: '2px' }}>
             <Container maxWidth="xl">
                 <Toolbar disableGutters sx={{ display: 'flex' }}>
+
+                    {/* Logo and Brand Name */}
+
                     <div style={{ display: "flex", direction: 'row', alignItems: 'center' }}>
                         <CottageRoundedIcon sx={{ display: { md: 'flex' }, color: '#7066ec', mr: 0.8 }} fontSize='small' />
                         <Typography
@@ -41,6 +44,7 @@ const Header = () => {
                         </Typography>
                     </div>
 
+                    {/* Display the list of pages  */}
 
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', sm: 'none', md: 'flex', }, ml: 2 }}>
                         {pages.map((page) => (
@@ -69,6 +73,8 @@ const Header = () => {
                             </Button>
                         ))}
                     </Box>
+
+                    {/* Login, Signup and Menu Button  */}
 
                     <Box sx={{ flexGrow: 0, ml: 2, marginLeft: 'auto' }}>
                         <Stack spacing={2} direction="row">
@@ -100,6 +106,7 @@ const Header = () => {
 
                                 display: { xs: 'none', md: 'flex', lg: 'flex' }
                             }}>Login</Button>
+
                             <Button variant="contained" sx={{
                                 boxShadow: 'none',
                                 textTransform: 'none',
@@ -122,6 +129,7 @@ const Header = () => {
                                 display: { xs: 'none', md: 'none', lg: 'flex' }
 
                             }}>Sign Up</Button>
+
                             <IconButton sx={{ display: { xs: 'flex', sm: 'flex', md: 'none' }, color: '#7066ec' }}><MenuIcon /></IconButton>
                         </Stack>
                     </Box>

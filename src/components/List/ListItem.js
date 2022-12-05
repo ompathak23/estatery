@@ -10,16 +10,28 @@ import StopOutlinedIcon from '@mui/icons-material/StopOutlined';
 import Box from '@mui/material/Box';
 import { Divider } from '@mui/material';
 
+
 const ListItem = ({ item }) => {
     return (
+
+        // List Item
+
         <Card sx={{ width: 285, borderRadius: '10px', margin: '12px' }}>
+            {/* Image of the property */}
+
             <CardMedia
                 component="img"
                 alt={item.name}
                 height="150"
                 image={item.image}
             />
+
+            {/* Details of the property */}
+
             <CardContent>
+
+                {/* Price Details and Like Button */}
+
                 <Box sx={{ display: 'flex', direction: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
                     <Box sx={{ display: "flex", direction: 'row', alignItems: 'center' }}>
                         <Typography gutterBottom variant="subtitle1" component="div" sx={{
@@ -42,6 +54,9 @@ const ListItem = ({ item }) => {
                     </Box>
                     <FavoriteBorderIcon fontSize='small' sx={{ marginTop: '-8px' }} />
                 </Box>
+
+                {/* Name of the Property */}
+
                 <Typography variant="h6" sx={{
                     fontFamily: 'Montserrat',
                     fontWeight: '700',
@@ -53,6 +68,8 @@ const ListItem = ({ item }) => {
                     {item.name}
                 </Typography>
 
+                {/* Address of the property*/}
+
                 <Typography variant="subtitle2" sx={{
                     fontFamily: 'Montserrat',
                     fontWeight: '400',
@@ -63,8 +80,16 @@ const ListItem = ({ item }) => {
                 }}>
                     {item.address}
                 </Typography>
+
                 <Divider flexItem />
+
+
+                {/* Bedrooms, Bathrooms, Surface Area */}
+
                 <Box sx={{ marginTop: '10px', display: 'flex', direction: 'row', justifyContent: 'space-between' }}>
+
+                    {/* Bedrooms */}
+
                     <div style={{ display: 'flex', direction: 'row', alignItems: 'center' }}>
                         <span><SingleBedOutlinedIcon fontSize="small" sx={{ color: '#7066ec' }} /></span>
                         <span><Typography variant="subtitle2" sx={{
@@ -77,6 +102,10 @@ const ListItem = ({ item }) => {
                             marginLeft: '3px'
                         }}>{item.bedrooms} beds</Typography></span>
                     </div>
+
+
+                    {/* Bathrooms */}
+
                     <div style={{ display: 'flex', direction: 'row', alignItems: 'center' }}>
                         <span><ShowerOutlinedIcon fontSize="small" sx={{ color: '#7066ec' }} /></span>
                         <span><Typography variant="subtitle2" sx={{
@@ -89,6 +118,9 @@ const ListItem = ({ item }) => {
                             marginLeft: '3px'
                         }}>{item.bathrooms} Bathrooms</Typography></span>
                     </div>
+
+                    {/* Surface Area */}
+
                     <div style={{ display: 'flex', direction: 'row', alignItems: 'center' }}>
                         <span><StopOutlinedIcon fontSize="small" sx={{ color: '#7066ec' }} /></span>
                         <span><Typography variant="subtitle2" sx={{

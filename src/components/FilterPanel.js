@@ -10,6 +10,7 @@ import { styled } from "@mui/material/styles";
 import { InputBase } from '@mui/material';
 
 
+// Custom Style for the Filters
 const CustomInput = styled(InputBase)(({ theme }) => ({
     "label + &": {
         marginTop: theme.spacing(3)
@@ -27,7 +28,7 @@ const CustomInput = styled(InputBase)(({ theme }) => ({
     }
 }));
 
-
+// Custom Style for the date filter
 const DateField = styled(TextField)({
     '& .MuiOutlinedInput-root': {
         '& fieldset': {
@@ -49,7 +50,12 @@ const FilterPanel = ({
 }) => {
     return (
         <div>
+            {/* Filter Panel Container */}
+
             <Container sx={{ backgroundColor: 'white', borderRadius: '10px', display: 'flex', direction: { sm: 'column', md: 'row' }, justifyContent: { xs: 'center', md: 'center' }, alignItems: 'center', width: '75%', flexWrap: 'wrap', gap: '10px' }}>
+
+                {/* Location Filter */}
+
                 <Box sx={{ p: 1 }}>
                     <Typography variant="subtitle1" sx={{
                         fontFamily: 'Montserrat',
@@ -60,6 +66,7 @@ const FilterPanel = ({
                         paddingTop: '10px',
                         color: 'grey',
                     }}>Location</Typography>
+
                     <Select
                         value={selectedLocation}
                         onChange={selectLocation}
@@ -75,7 +82,9 @@ const FilterPanel = ({
                         <MenuItem value='Canada' sx={{ fontFamily: 'Montserrat', fontWeight: '500', fontSize: '15px' }}>Canada</MenuItem>
                     </Select>
                 </Box>
-                {/* <Divider orientation="vertical" flexItem sx={{ display: { xs: 'none', lg: 'flex' } }} /> */}
+
+                {/* Date Filter */}
+
                 <Box sx={{ p: 2 }}>
                     <Typography variant="subtitle1" sx={{
                         fontFamily: 'Montserrat',
@@ -86,6 +95,7 @@ const FilterPanel = ({
                         paddingTop: '15px',
                         color: 'grey',
                     }}>When</Typography>
+
                     <DateField
                         id="date"
                         type="date"
@@ -94,33 +104,9 @@ const FilterPanel = ({
                         InputProps={{ style: { fontFamily: 'Montserrat', fontWeight: '600', fontSize: '15px', marginTop: '-7px' } }}
                     />
                 </Box>
-                {/* <Divider orientation="vertical" flexItem sx={{ display: { xs: 'none', lg: 'flex' } }} /> */}
-                {/* <Box>
-                        <Typography variant="subtitle1">When</Typography>
-                        <LocalizationProvider dateAdapter={AdapterDayjs}>
-                            <MobileDatePicker
-                                label="Select Move in Date"
-                                value={selectedDate}
-                                onChange={selectDate}
-                                renderInput={({ inputRef, inputProps, InputProps }) => (
-                                    <Box sx={{ display: "flex", alignItems: "center" }}>
-                                        <input
-                                            style={{
-                                                height: "30px",
-                                                fontWeight: "500",
-                                                padding: "10px",
-                                                borderRadius: "12px",
-                                                border: "0px"
-                                            }}
-                                            ref={inputRef}
-                                            {...inputProps}
-                                            className="btn"
-                                        />
-                                    </Box>
-                                )}
-                            />
-                        </LocalizationProvider>
-                    </Box> */}
+
+
+                {/* Price Filter */}
 
                 <Box sx={{ p: 2 }}>
                     <Typography variant="subtitle1" sx={{
@@ -132,6 +118,7 @@ const FilterPanel = ({
                         paddingTop: '10px',
                         color: 'grey',
                     }}>Price</Typography>
+
                     <Select
                         value={selectedPrice}
                         onChange={selectPrice}
@@ -149,7 +136,10 @@ const FilterPanel = ({
                         <MenuItem value={4} sx={{ fontFamily: 'Montserrat', fontWeight: '500', fontSize: '15px' }}>{'$200,000 - $300,000'}</MenuItem>
                     </Select>
                 </Box>
-                {/* <Divider orientation="vertical" flexItem sx={{ display: { xs: 'none', lg: 'flex' } }} /> */}
+
+
+                {/* Property Type Filter */}
+
                 <Box sx={{ p: 2 }}>
                     <Typography variant="subtitle1" sx={{
                         fontFamily: 'Montserrat',
@@ -160,6 +150,7 @@ const FilterPanel = ({
                         paddingTop: '10px',
                         color: 'grey',
                     }}>Property Type</Typography>
+
                     <Select
                         value={selectedType}
                         onChange={selectType}
@@ -176,7 +167,9 @@ const FilterPanel = ({
                         <MenuItem value='Apartment' sx={{ fontFamily: 'Montserrat', fontWeight: '500', fontSize: '15px' }}>Apartment</MenuItem>
                     </Select>
                 </Box>
-                {/* <Divider orientation="vertical" flexItem sx={{ display: { xs: 'none', lg: 'flex' } }} /> */}
+
+
+                {/* Submit Button */}
                 <Box>
                     <Button variant="contained" onClick={submitForm} sx={{
                         width: '120px',

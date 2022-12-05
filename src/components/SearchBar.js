@@ -5,6 +5,8 @@ import SearchIcon from '@mui/icons-material/Search';
 import { InputBase } from '@mui/material';
 
 
+// Custom Style for the search bar
+
 const styles = {
     color: '#9b98a7',
     backgroundColor: 'white',
@@ -30,6 +32,9 @@ const SearchBar = ({ value, changeInput }) => {
     return (
         <div>
             <Container sx={{ display: 'flex', direction: 'row', justifyContent: { xs: 'center', md: 'space-between' }, alignItems: 'center', height: '150px', width: '78%' }}>
+
+                {/* Heading */}
+
                 <Typography variant="h4" sx={{
                     mr: 2.5,
                     display: { xs: 'none', md: 'flex' },
@@ -41,7 +46,16 @@ const SearchBar = ({ value, changeInput }) => {
                     letterSpacing: '-0.01rem',
                 }}>Search properties to rent</Typography>
 
-                <InputBase sx={styles} value={value} onChange={changeInput} placeholder="Search Properties" disabled={false} startAdornment={<SearchIcon fontSize="small" sx={{ color: '#cac8d0', ml: 2, }} />} />
+                {/* Search Bar */}
+
+                <InputBase
+                    sx={styles}
+                    value={value}
+                    onChange={changeInput}
+                    placeholder="Search Properties"
+                    disabled={false}
+                    startAdornment={<SearchIcon fontSize="small" sx={{ color: '#cac8d0', ml: 2, }} />}
+                />
             </Container>
         </div>
     )

@@ -2,48 +2,49 @@ import React, { useEffect } from 'react'
 import { useState } from 'react'
 import SearchBar from '../components/SearchBar'
 import FilterPanel from '../components/FilterPanel'
-import List from '../components/List'
+import List from '../components/List/List'
 import { housingData } from './data'
 import EmptyView from '../components/EmptyView'
 
-
-
 const HomePage = () => {
 
+    // States defined for the filter categories
     const [selectedLocation, setSelectedLocation] = useState("None");
     const [selectedDate, setSelectedDate] = useState('');
     const [selectedPrice, setSelectedPrice] = useState(0);
     const [selectedType, setSelectedType] = useState("None");
-
-    const [list, setList] = useState(housingData);
-    const [resultsFound, setResultsFound] = useState(true);
     const [searchInput, setSearchInput] = useState('');
 
+    // States defined for the list of items to be presented depending on the state whether results are found or not
+    const [list, setList] = useState(housingData);
+    const [resultsFound, setResultsFound] = useState(true);
+
+    // Handle change events for the different filters
     const handleSelectLocation = (event) => setSelectedLocation(event.target.value);
-
     const handleSelectDate = (event) => setSelectedDate(event.target.value);
-
     const handleSelectPrice = (event) => setSelectedPrice(event.target.value);
-
     const handleSelectType = (event) => setSelectedType(event.target.value);
 
 
+    // Function to filter the list according to the selected filters
     const applyFilters = () => {
         let updatedList = housingData;
 
+        // Location filer applied
         if (selectedLocation !== "None") {
             updatedList = updatedList.filter(
                 (item) => item.country === selectedLocation
             );
         }
 
-
+        // Property Type filer applied
         if (selectedType !== "None") {
             updatedList = updatedList.filter(
                 (item) => item.type === selectedType
             );
         }
 
+        // Price filer applied
         if (selectedPrice) {
             let minPrice = 0;
             let maxPrice = 300000;
@@ -66,6 +67,7 @@ const HomePage = () => {
             );
         }
 
+        // Date filer applied
         if (selectedDate) {
             updatedList = updatedList.filter((item) => {
                 let move_date = item.availableFrom.split("-");
@@ -75,6 +77,7 @@ const HomePage = () => {
             });
         }
 
+        // Search filer applied
         if (searchInput) {
             updatedList = updatedList.filter(
                 (item) =>
@@ -83,18 +86,16 @@ const HomePage = () => {
             );
         }
 
-        setList(updatedList);
-        !updatedList.length ? setResultsFound(false) : setResultsFound(true);
+        setList(updatedList); // Update the list with the items filtered
+        !updatedList.length ? setResultsFound(false) : setResultsFound(true); //Update resultsFound state depending on the filtered list of items
     }
 
-    // useEffect(() => {
-    //     applyFilters();
-    // }, [selectedLocation, selectedPrice, selectedType, selectedDate, searchInput])
 
     useEffect(() => {
         applyFilters();
     }, [searchInput]) // eslint-disable-line react-hooks/exhaustive-deps
 
+    // Handle submission of the filters
     const handleSubmit = (e) => {
         e.preventDefault()
         applyFilters()
@@ -102,9 +103,14 @@ const HomePage = () => {
 
     return (
         <div style={{ backgroundColor: '#f8f7fd' }}>
+            {/* Search Bar Component */}
+
             <SearchBar
                 value={searchInput}
                 changeInput={(e) => setSearchInput(e.target.value)} />
+
+            {/* Filter Panel Component */}
+
             <FilterPanel
                 selectedLocation={selectedLocation}
                 selectedType={selectedType}
@@ -116,6 +122,9 @@ const HomePage = () => {
                 selectDate={handleSelectDate}
                 submitForm={handleSubmit}
             />
+
+            {/* Results Component : Displays EmptyView Component when no results to show */}
+
             <>
                 {resultsFound ? <List list={list} /> : <EmptyView />}
             </>
