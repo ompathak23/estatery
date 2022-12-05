@@ -49,7 +49,7 @@ const HomePage = () => {
             let minPrice = 0;
             let maxPrice = 300000;
 
-            if (selectedPrice === '1') {
+            if (selectedPrice === 1) {
                 maxPrice = 100000;
             } else if (selectedPrice === 2) {
                 minPrice = 100000;
